@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLaVA Image Analysis</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        #results { margin-top: 20px; }
+        .result { margin-bottom: 20px; border: 1px solid #ddd; padding: 10px; }
+        .progress-bar { width: 100%; background-color: #f0f0f0; }
+        .progress { height: 20px; background-color: #4CAF50; width: 0%; }
+    </style>
+</head>
+<body>
+    <h1>LLaVA Image Analysis</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="file" multiple>
+        <input type="submit" value="Upload and Analyze">
+    </form>
+    <div id="progress"></div>
+    <div id="results"></div>
+
+    <script>
+        $(function() {
+            var socket = io.connect(window.location.protocol + '//' + document.domain + ':' + window.location.port);
+            
+            $('#uploadForm').submit(function(e) {
+                e.preventDefault();
+                var formData = new FormData(this);
+                $.ajax({
+                    url: '/',
+                    type: 'POST',
+                    data: formData,
+                    success: function (data) {
+                        $('#progress').empty();
+                        $('#results').empty();
+                        data.task_ids.forEach(function(task_id, index) {
+                            $('#progress').append(
+                                '<div id="progress-' + task_id + '">' +
+                                '<h3>Image ' + (index + 1) + '</h3>' +
+                                '<div class="progress-bar"><div class="progress"></div></div>' +
+                                '<p class="status"></p>' +
+                                '</div>'
+                            );
+                            update_progress(task_id);
+                        });
+                    },
+                    cache: false,
+                    contentType: false,
+                    processData: false
+                });
+            });
+
+            function update_progress(task_id) {
+                $.ajax({
+                    url: '/status/' + task_id,
+                    success: function(data) {
+                        var progressBar = $('#progress-' + task_id + ' .progress');
+                        progressBar.css('width', data.current + '%');
+                        $('#progress-' + task_id + ' .status').text(data.status);
+                        
+                        if (data.state == 'SUCCESS') {
+                            if ('result' in data) {
+                                $('#results').append(
+                                    '<div class="result">' +
+                                    '<h3>' + data.filename + '</h3>' +
+                                    '<pre>' + data.result + '</pre>' +
+                                    '</div>'
+                                );
+                            } else if ('error' in data) {
+                                $('#results').append(
+                                    '<div class="result error">' +
+                                    '<h3>Error processing ' + data.filename + '</h3>' +
+                                    '<pre>' + data.error + '</pre>' +
+                                    '</div>'
+                                );
+                            }
+                        }
+                        else if (data.state != 'FAILURE') {
+                            setTimeout(function() {
+                                update_progress(task_id);
+                            }, 1000);
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

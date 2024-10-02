@@ -1,0 +1,198 @@
+[1727837385] [examples/llava/llava-cli.cpp:  290][                    main] Log start
+[1727837385] [            common/log.h:  589][   log_dump_cmdline_impl] Cmd: /Users/fuchangwei/llama.cpp/llama-llava-cli -m /Users/fuchangwei/LLaVA/llava-llama-3-8b-v1_1-gguf/llava-llama-3-8b-v1_1-int4.gguf --mmproj /Users/fuchangwei/LLaVA/llava-llama-3-8b-v1_1-gguf/llava-llama-3-8b-v1_1-mmproj-f16.gguf --image uploads/LINE_ALBUM__240720_1-2.jpg -c 4096 -e -p "<|start_header_id|>user<|end_header_id|>
+
+<image>
+Describe the contents of this image, including the objects and their relative positions.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+"
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: loaded meta data with 22 key-value pairs and 291 tensors from /Users/fuchangwei/LLaVA/llava-llama-3-8b-v1_1-gguf/llava-llama-3-8b-v1_1-int4.gguf (version GGUF V3 (latest))
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - kv   0:                       general.architecture str              = llama
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - kv   1:                               general.name str              = Downloads
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - kv   2:                           llama.vocab_size u32              = 128256
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - kv   3:                       llama.context_length u32              = 8192
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - kv   4:                     llama.embedding_length u32              = 4096
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - kv   5:                          llama.block_count u32              = 32
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - kv   6:                  llama.feed_forward_length u32              = 14336
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - kv   7:                 llama.rope.dimension_count u32              = 128
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - kv   8:                 llama.attention.head_count u32              = 32
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - kv   9:              llama.attention.head_count_kv u32              = 8
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - kv  10:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - kv  11:                       llama.rope.freq_base f32              = 500000.000000
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - kv  12:                          general.file_type u32              = 15
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - kv  14:                      tokenizer.ggml.tokens arr[str,128256]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - kv  15:                      tokenizer.ggml.scores arr[f32,128256]  = [0.000000, 0.000000, 0.000000, 0.0000...
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,128256]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,280147]  = ["Ġ Ġ", "Ġ ĠĠĠ", "ĠĠ ĠĠ", "...
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 128000
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 128001
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - kv  20:                    tokenizer.chat_template str              = {% set loop_messages = messages %}{% ...
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - type  f32:   65 tensors
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - type q4_K:  193 tensors
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_model_loader: - type q6_K:   33 tensors
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_vocab: missing pre-tokenizer type, using: 'default'
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_vocab:                                             
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_vocab: ************************************        
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_vocab: GENERATION QUALITY WILL BE DEGRADED!        
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_vocab: CONSIDER REGENERATING THE MODEL             
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_vocab: ************************************        
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_vocab:                                             
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_vocab: special tokens cache size = 256
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_vocab: token to piece cache size = 0.8000 MB
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: format           = GGUF V3 (latest)
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: arch             = llama
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: vocab type       = BPE
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: n_vocab          = 128256
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: n_merges         = 280147
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: vocab_only       = 0
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: n_ctx_train      = 8192
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: n_embd           = 4096
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: n_layer          = 32
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: n_head           = 32
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: n_head_kv        = 8
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: n_rot            = 128
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: n_swa            = 0
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: n_embd_head_k    = 128
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: n_embd_head_v    = 128
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: n_gqa            = 4
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: n_embd_k_gqa     = 1024
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: n_embd_v_gqa     = 1024
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: f_norm_eps       = 0.0e+00
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: f_norm_rms_eps   = 1.0e-05
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: f_logit_scale    = 0.0e+00
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: n_ff             = 14336
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: n_expert         = 0
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: n_expert_used    = 0
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: causal attn      = 1
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: pooling type     = 0
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: rope type        = 0
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: rope scaling     = linear
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: freq_base_train  = 500000.0
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: freq_scale_train = 1
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: n_ctx_orig_yarn  = 8192
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: rope_finetuned   = unknown
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: ssm_d_conv       = 0
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: ssm_d_inner      = 0
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: ssm_d_state      = 0
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: ssm_dt_rank      = 0
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: model type       = 8B
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: model ftype      = Q4_K - Medium
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: model params     = 8.03 B
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: model size       = 4.58 GiB (4.89 BPW) 
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: general.name     = Downloads
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: BOS token        = 128000 '<|begin_of_text|>'
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: EOS token        = 128001 '<|end_of_text|>'
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: LF token         = 128 'Ä'
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: EOT token        = 128009 '<|eot_id|>'
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_print_meta: max token length = 256
+[1727837385] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_tensors: ggml ctx size =    0.27 MiB
+[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_backend_metal_log_allocated_size: allocated buffer, size =  4403.52 MiB, ( 4403.58 / 10922.67)[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] 
+[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_tensors: offloading 32 repeating layers to GPU
+[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_tensors: offloading non-repeating layers to GPU
+[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_tensors: offloaded 33/33 layers to GPU
+[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_tensors:      Metal buffer size =  4403.50 MiB
+[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llm_load_tensors:        CPU buffer size =   281.81 MiB
+[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] .[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] 
+[1727837386] [ examples/llava/clip.cpp: 1040][         clip_model_load] clip_model_load: model name:   openai/clip-vit-large-patch14-336
+[1727837386] [ examples/llava/clip.cpp: 1042][         clip_model_load] clip_model_load: description:  image encoder for LLaVA
+[1727837386] [ examples/llava/clip.cpp: 1043][         clip_model_load] clip_model_load: GGUF version: 3
+[1727837386] [ examples/llava/clip.cpp: 1044][         clip_model_load] clip_model_load: alignment:    32
+[1727837386] [ examples/llava/clip.cpp: 1045][         clip_model_load] clip_model_load: n_tensors:    377
+[1727837386] [ examples/llava/clip.cpp: 1046][         clip_model_load] clip_model_load: n_kv:         19
+[1727837386] [ examples/llava/clip.cpp: 1047][         clip_model_load] clip_model_load: ftype:        f16
+[1727837386] [ examples/llava/clip.cpp: 1048][         clip_model_load] 
+[1727837386] [ examples/llava/clip.cpp: 1055][         clip_model_load] clip_model_load: loaded meta data with 19 key-value pairs and 377 tensors from /Users/fuchangwei/LLaVA/llava-llama-3-8b-v1_1-gguf/llava-llama-3-8b-v1_1-mmproj-f16.gguf
+[1727837386] [ examples/llava/clip.cpp: 1065][         clip_model_load] clip_model_load: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+[1727837386] [ examples/llava/clip.cpp: 1081][         clip_model_load] clip_model_load: - kv   0:                       general.architecture str              = clip
+[1727837386] [ examples/llava/clip.cpp: 1081][         clip_model_load] clip_model_load: - kv   1:                      clip.has_text_encoder bool             = false
+[1727837386] [ examples/llava/clip.cpp: 1081][         clip_model_load] clip_model_load: - kv   2:                    clip.has_vision_encoder bool             = true
+[1727837386] [ examples/llava/clip.cpp: 1081][         clip_model_load] clip_model_load: - kv   3:                   clip.has_llava_projector bool             = true
+[1727837386] [ examples/llava/clip.cpp: 1081][         clip_model_load] clip_model_load: - kv   4:                          general.file_type u32              = 1
+[1727837386] [ examples/llava/clip.cpp: 1081][         clip_model_load] clip_model_load: - kv   5:                               general.name str              = openai/clip-vit-large-patch14-336
+[1727837386] [ examples/llava/clip.cpp: 1081][         clip_model_load] clip_model_load: - kv   6:                        general.description str              = image encoder for LLaVA
+[1727837386] [ examples/llava/clip.cpp: 1081][         clip_model_load] clip_model_load: - kv   7:                        clip.projector_type str              = mlp
+[1727837386] [ examples/llava/clip.cpp: 1081][         clip_model_load] clip_model_load: - kv   8:                     clip.vision.image_size u32              = 336
+[1727837386] [ examples/llava/clip.cpp: 1081][         clip_model_load] clip_model_load: - kv   9:                     clip.vision.patch_size u32              = 14
+[1727837386] [ examples/llava/clip.cpp: 1081][         clip_model_load] clip_model_load: - kv  10:               clip.vision.embedding_length u32              = 1024
+[1727837386] [ examples/llava/clip.cpp: 1081][         clip_model_load] clip_model_load: - kv  11:            clip.vision.feed_forward_length u32              = 4096
+[1727837386] [ examples/llava/clip.cpp: 1081][         clip_model_load] clip_model_load: - kv  12:                 clip.vision.projection_dim u32              = 768
+[1727837386] [ examples/llava/clip.cpp: 1081][         clip_model_load] clip_model_load: - kv  13:           clip.vision.attention.head_count u32              = 16
+[1727837386] [ examples/llava/clip.cpp: 1081][         clip_model_load] clip_model_load: - kv  14:   clip.vision.attention.layer_norm_epsilon f32              = 0.000010
+[1727837386] [ examples/llava/clip.cpp: 1081][         clip_model_load] clip_model_load: - kv  15:                    clip.vision.block_count u32              = 23
+[1727837386] [ examples/llava/clip.cpp: 1081][         clip_model_load] clip_model_load: - kv  16:                     clip.vision.image_mean arr[f32,3]       = [0.481455, 0.457828, 0.408211]
+[1727837386] [ examples/llava/clip.cpp: 1081][         clip_model_load] clip_model_load: - kv  17:                      clip.vision.image_std arr[f32,3]       = [0.268630, 0.261303, 0.275777]
+[1727837386] [ examples/llava/clip.cpp: 1081][         clip_model_load] clip_model_load: - kv  18:                              clip.use_gelu bool             = false
+[1727837386] [ examples/llava/clip.cpp: 1090][         clip_model_load] clip_model_load: - type  f32:  235 tensors
+[1727837386] [ examples/llava/clip.cpp: 1090][         clip_model_load] clip_model_load: - type  f16:  142 tensors
+[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: allocating
+[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: found device: Apple M1 Pro
+[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: picking default device: Apple M1 Pro
+[1727837386] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: using embedded metal library
+[1727837387] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: GPU name:   Apple M1 Pro
+[1727837387] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: GPU family: MTLGPUFamilyApple7  (1007)
+[1727837387] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+[1727837387] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+[1727837387] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: simdgroup reduction support   = true
+[1727837387] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: simdgroup matrix mul. support = true
+[1727837387] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: hasUnifiedMemory              = true
+[1727837387] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+[1727837391] [ examples/llava/clip.cpp: 1137][         clip_model_load] clip_model_load: CLIP using Metal backend
+[1727837391] [ examples/llava/clip.cpp: 1183][         clip_model_load] clip_model_load: text_encoder:   0
+[1727837391] [ examples/llava/clip.cpp: 1184][         clip_model_load] clip_model_load: vision_encoder: 1
+[1727837391] [ examples/llava/clip.cpp: 1185][         clip_model_load] clip_model_load: llava_projector:  1
+[1727837391] [ examples/llava/clip.cpp: 1186][         clip_model_load] clip_model_load: minicpmv_projector:  0
+[1727837391] [ examples/llava/clip.cpp: 1187][         clip_model_load] clip_model_load: model size:     595.49 MB
+[1727837391] [ examples/llava/clip.cpp: 1188][         clip_model_load] clip_model_load: metadata size:  0.13 MB
+[1727837391] [ examples/llava/clip.cpp: 1192][         clip_model_load] clip_model_load: params backend buffer size =  595.49 MB (377 tensors)
+[1727837391] [ examples/llava/clip.cpp:  164][             get_key_idx] key clip.vision.image_grid_pinpoints not found in file
+[1727837391] [ examples/llava/clip.cpp:  164][             get_key_idx] key clip.vision.mm_patch_merge_type not found in file
+[1727837391] [ examples/llava/clip.cpp:  164][             get_key_idx] key clip.vision.image_crop_resolution not found in file
+[1727837391] [ examples/llava/clip.cpp: 1490][         clip_model_load] clip_model_load: compute allocated memory: 32.89 MB
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_new_context_with_model: n_ctx      = 4096
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_new_context_with_model: n_batch    = 2048
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_new_context_with_model: n_ubatch   = 512
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_new_context_with_model: flash_attn = 0
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_new_context_with_model: freq_base  = 500000.0
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_new_context_with_model: freq_scale = 1
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: allocating
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: found device: Apple M1 Pro
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: picking default device: Apple M1 Pro
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: using embedded metal library
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: GPU name:   Apple M1 Pro
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: GPU family: MTLGPUFamilyApple7  (1007)
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: simdgroup reduction support   = true
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: simdgroup matrix mul. support = true
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: hasUnifiedMemory              = true
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_kv_cache_init:      Metal KV buffer size =   512.00 MiB
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_new_context_with_model: KV self size  =  512.00 MiB, K (f16):  256.00 MiB, V (f16):  256.00 MiB
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_new_context_with_model:        CPU  output buffer size =     0.49 MiB
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_new_context_with_model:      Metal compute buffer size =   296.00 MiB
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_new_context_with_model:        CPU compute buffer size =    16.01 MiB
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_new_context_with_model: graph nodes  = 1030
+[1727837391] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_new_context_with_model: graph splits = 2
+[1727837392] encode_image_with_clip: image embedding created: 576 tokens
+[1727837392] 
+encode_image_with_clip: image encoded in   417.50 ms by CLIP (    0.72 ms per image patch)
+[1727837392] [examples/llava/llava-cli.cpp:  160][          process_prompt] system_prompt: <|start_header_id|>user<|end_header_id|>
+
+
+[1727837392] [examples/llava/llava-cli.cpp:  167][          process_prompt] user_prompt: 
+Describe the contents of this image, including the objects and their relative positions.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+[1727837402] [examples/llava/llava-cli.cpp:  192][          process_prompt] 
+[1727837413] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] 
+[1727837413] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_print_timings:        load time =   17003.88 ms
+[1727837413] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_print_timings:      sample time =      16.28 ms /   226 runs   (    0.07 ms per token, 13878.65 tokens per second)
+[1727837413] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_print_timings: prompt eval time =   10771.66 ms /   601 tokens (   17.92 ms per token,    55.79 tokens per second)
+[1727837413] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_print_timings:        eval time =    9942.70 ms /   225 runs   (   44.19 ms per token,    22.63 tokens per second)
+[1727837413] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] llama_print_timings:       total time =   27030.80 ms /   826 tokens
+[1727837413] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_free: deallocating
+[1727837413] [examples/llava/llava-cli.cpp:  275][llama_log_callback_logTee] ggml_metal_free: deallocating
